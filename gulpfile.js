@@ -9,6 +9,21 @@ gutil = require('gulp-util');
 var sassSources = ['components/sass/style.scss']; 
 var jsSources = ['components/scripts/*.js'];
 var coffeeSources = ['components/coffee/*.coffee'];
+var htmlSources = ['builds/development/index.html'];
+
+
+gulp.task('html', function() {
+    gulp.src(htmlSources)
+        .pipe(connect.reload())
+});
+
+
+// this task called connect, uses the
+// the connect variable you created
+// to access the method called server
+// then creates a server for you
+// the root specifies what info to pull from
+// the livereload setting needs to be true
 
 gulp.task('connect', function(){
   connect.server({
@@ -31,6 +46,7 @@ gulp.task('watch', function() {
     gulp.watch(coffeeSources, ['coffee']);
     gulp.watch(jsSources, ['js']);
     gulp.watch('components/sass/*.scss', ['compass']);
+    gulp.watch(htmlSources, ['html']);
 })
 
 // compass process sass and converts it to css
@@ -80,4 +96,4 @@ gutil.log('Workflows are awesome');
 });
 
 // multi-task
-gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['coffee', 'js', 'compass', 'html', 'connect', 'watch']);
