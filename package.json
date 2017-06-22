@@ -11,5 +11,8 @@
     "url": "?.git"
   },
   "author": "Brett Cunningham, Ulrich Kakou, Yvon Biselele",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
