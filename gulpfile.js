@@ -9,6 +9,8 @@ var sassSources = ['components/sass/style.scss']; //there was an error here with
 var jsSources = ['components/scripts/*.js'];
 var coffeeSources = ['components/coffee/*.coffee'];
 
+
+
 // compass process sass and converts it to css
 // we then move it to the dev folder for css
 // it also creates a css folder in your main folder
@@ -49,3 +51,6 @@ gulp.task('coffee', function () {
 gulp.task('log', function() {
 gutil.log('Workflows are awesome');
 });
+
+// multi-task
+gulp.task('default', ['coffee', 'js', 'compass']);
