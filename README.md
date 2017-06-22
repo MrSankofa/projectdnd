@@ -13,3 +13,8 @@ To use this repository use npm install to install of the dependecies needed for 
 
 
 You can now use this repository to start working on the html,css,js,etc.
+
+If you are trying to set the env variable to production note that the production
+folder should be empty otherwise it will not overwrite the new code you had. Thus
+just delete the files not the folder and execute NODE_ENV=production gulp in the 
+command prompt or terminal.

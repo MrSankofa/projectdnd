@@ -4,6 +4,8 @@ concat = require('gulp-concat'),
 browserify = require('gulp-browserify'),
 compass = require('gulp-compass'),
 connect = require('gulp-connect'),
+uglify = require('gulp-uglify'),
+gulpif = require('gulp-if'),
 gutil = require('gulp-util');
 
 var env,
@@ -31,6 +33,8 @@ jsSources = ['components/scripts/*.js'];
 htmlSources = ['outputDir' + '*.html'];
 jsonSources = ['outputDir' + 'js/*.json'];
 sassSources = ['components/sass/style.scss'];
+
+
 
 gulp.task('json', function() {
     gulp.src(jsonSources)
@@ -102,6 +106,7 @@ gulp.task('js', function() {
     gulp.src(jsSources)
         .pipe(concat('script.js'))
         .pipe(browserify()) 
+        .pipe(gulpif(env === 'production', uglify()))
         .pipe(connect.reload()) 
         .pipe(gulp.dest(outputDir + 'js'))
 });
