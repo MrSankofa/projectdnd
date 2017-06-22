@@ -8,6 +8,8 @@ uglify = require('gulp-uglify'),
 gulpif = require('gulp-if'),
 jsonminify = require('gulp-jsonminify'),
 htmlminify = require('gulp-minify-html'),
+imagemin = require('gulp-imagemin'),
+pngcrush = require('imagemin-pngcrush'),
 gutil = require('gulp-util');
 
 var env,
@@ -35,6 +37,19 @@ jsSources = ['components/scripts/*.js'];
 htmlSources = ['outputDir' + '*.html'];
 jsonSources = ['outputDir' + 'js/*.json'];
 sassSources = ['components/sass/style.scss'];
+
+gulp.task('imagemin', function() {
+    gulp.src('builds/development/image/**/*.*')
+    .pipe(gulpif( env === 'production', imagemin({
+        progressive: true,
+        svgoPlugins: [{ removeViewBox: false }],
+        use: [pngcrush()]
+    })))
+    .pipe(gulpif(env === 'production', gulp.dest(outputDir + 'images')))
+    .pipe(connect.reload())
+
+});
+
 
 // these json and html task just include their 
 // respective minify functions and use a conditional
@@ -137,4 +152,4 @@ gutil.log('Workflows are awesome');
 });
 
 // multi-task
-gulp.task('default', ['json', 'html', 'coffee', 'js', 'compass','connect', 'watch']);
+gulp.task('default', ['imagemin',  'json', 'html', 'coffee', 'js', 'compass','connect', 'watch']);
