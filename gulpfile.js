@@ -6,6 +6,8 @@ compass = require('gulp-compass'),
 connect = require('gulp-connect'),
 uglify = require('gulp-uglify'),
 gulpif = require('gulp-if'),
+jsonminify = require('gulp-jsonminify'),
+htmlminify = require('gulp-minify-html'),
 gutil = require('gulp-util');
 
 var env,
@@ -34,15 +36,21 @@ htmlSources = ['outputDir' + '*.html'];
 jsonSources = ['outputDir' + 'js/*.json'];
 sassSources = ['components/sass/style.scss'];
 
-
+// these json and html task just include their 
+// respective minify functions and use a conditional
+// to know when to minify it.
 
 gulp.task('json', function() {
-    gulp.src(jsonSources)
+    gulp.src('builds/development/js/*.json')
+        .pipe(gulpif(env === 'production', jsonminify()))
+        .pipe(gulpif(env === 'production', gulp.dest('builds/production/js')))
         .pipe(connect.reload())
 })
 
 gulp.task('html', function() {
     gulp.src('builds/development/*.html')
+        .pipe(gulpif(env === 'production', htmlminify()))
+        .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
         .pipe(connect.reload())
 });
 
