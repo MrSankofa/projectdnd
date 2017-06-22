@@ -1,3 +1,3 @@
 # DND Workflows
 
-This project is an example of workflow management for a lynda.com course.
+This project is for Doyse and Deliena's Driver's Ed Website.
