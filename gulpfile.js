@@ -5,11 +5,24 @@ browserify = require('gulp-browserify'),
 compass = require('gulp-compass'),
 gutil = require('gulp-util');
 
-var sassSources = ['components/sass/style.scss']; //there was an error here with the /
+var sassSources = ['components/sass/style.scss']; 
 var jsSources = ['components/scripts/*.js'];
 var coffeeSources = ['components/coffee/*.coffee'];
 
+// this task is designed to watch for changes made
+// to the coffee script, js, or sass files.
+// basically, all of our components. We primarily
+// will be working out of those folders then sending
+// them to the development folder for review.
 
+// when a change has been made it will rerun that task
+// so that the dev folder updates
+
+gulp.task('watch', function() {
+    gulp.watch(coffeeSources, ['coffee']);
+    gulp.watch(jsSources, ['js']);
+    gulp.watch('components/sass/*.scss', ['compass']);
+})
 
 // compass process sass and converts it to css
 // we then move it to the dev folder for css
@@ -38,10 +51,10 @@ gulp.task('js', function() {
 // this task converts our coffee script code and
 // converts it to js. Then it sends it to the scripts
 // folder
-gulp.task('coffee', function () {
-    gulp.src(coffeeSources)
+gulp.task('coffee', function() {
+  gulp.src(coffeeSources)
     .pipe(coffee({ bare: true })
-        .on('error', gutil.log))
+      .on('error', gutil.log))
     .pipe(gulp.dest('components/scripts'))
 });
 
@@ -53,4 +66,4 @@ gutil.log('Workflows are awesome');
 });
 
 // multi-task
-gulp.task('default', ['coffee', 'js', 'compass']);
+gulp.task('default', ['coffee', 'js', 'compass', 'watch']);
