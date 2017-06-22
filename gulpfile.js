@@ -5,18 +5,20 @@ browserify = require('gulp-browserify'),
 compass = require('gulp-compass'),
 gutil = require('gulp-util');
 
-var sassSources = ['/components/sass/style.scss'];
-var jsSources = ['/components/scripts/*.js'];
-var coffeeSources = ['/components/coffee/*.coffee'];
+var sassSources = ['components/sass/style.scss']; //there was an error here with the /
+var jsSources = ['components/scripts/*.js'];
+var coffeeSources = ['components/coffee/*.coffee'];
 
+// compass process sass and converts it to css
+// we then move it to the dev folder for css
 gulp.task('compass', function() {
     gulp.src(sassSources)
         .pipe(compass({
            sass: 'components/sass',
            image: 'builds/development/images',
            style: 'expanded'
-        })
-        .on('error', gutil.log))
+        }))
+        .on('error', gutil.log)
         .pipe(gulp.dest('builds/development/css'))
 });
 
