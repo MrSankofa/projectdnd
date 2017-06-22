@@ -3,11 +3,20 @@ coffee = require('gulp-coffee'),
 concat = require('gulp-concat'),
 browserify = require('gulp-browserify'),
 compass = require('gulp-compass'),
+connect = require('gulp-connect'),
 gutil = require('gulp-util');
 
 var sassSources = ['components/sass/style.scss']; 
 var jsSources = ['components/scripts/*.js'];
 var coffeeSources = ['components/coffee/*.coffee'];
+
+gulp.task('connect', function(){
+  connect.server({
+    root: 'builds/development',
+    livereload: true});
+});
+
+
 
 // this task is designed to watch for changes made
 // to the coffee script, js, or sass files.
@@ -35,16 +44,21 @@ gulp.task('compass', function() {
            style: 'expanded'
         }))
         .on('error', gutil.log)
+        .pipe(connect.reload()) 
         .pipe(gulp.dest('builds/development/css'))
 });
 
 // This task takes all of your js code in your 
 // scripts folder and concatenates them then
 // moves them to the dev/js folder
+
+//this pipes in our libraries like jquery and mustache
+//this reloads every time there's a change to js
 gulp.task('js', function() {
     gulp.src(jsSources)
         .pipe(concat('script.js'))
-        .pipe(browserify()) //this pipes in our libraries like jquery and mustache
+        .pipe(browserify()) 
+        .pipe(connect.reload()) 
         .pipe(gulp.dest('builds/development/js'))
 });
 
@@ -66,4 +80,4 @@ gutil.log('Workflows are awesome');
 });
 
 // multi-task
-gulp.task('default', ['coffee', 'js', 'compass', 'watch']);
+gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
