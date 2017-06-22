@@ -6,14 +6,39 @@ compass = require('gulp-compass'),
 connect = require('gulp-connect'),
 gutil = require('gulp-util');
 
-var sassSources = ['components/sass/style.scss']; 
-var jsSources = ['components/scripts/*.js'];
-var coffeeSources = ['components/coffee/*.coffee'];
-var htmlSources = ['builds/development/index.html'];
+var env,
+    coffeeSources,
+    jsSources,
+    htmlSources,
+    jsonSources,
+    sassSources,
+    outputDir,
+    sassStyle;
 
+env = process.env.NODE_ENV || 'development';
+
+if (env === 'development') {
+    outputDir = 'builds/development/';
+    sassStyle = 'expanded';
+} else {
+    outputDir = 'builds/production/';
+    sassStyle = 'compressed';
+}
+
+coffeeSources = ['components/coffee/*.coffee'];
+jsSources = ['components/scripts/*.js'];
+
+htmlSources = ['outputDir' + '*.html'];
+jsonSources = ['outputDir' + 'js/*.json'];
+sassSources = ['components/sass/style.scss'];
+
+gulp.task('json', function() {
+    gulp.src(jsonSources)
+        .pipe(connect.reload())
+})
 
 gulp.task('html', function() {
-    gulp.src(htmlSources)
+    gulp.src('builds/development/*.html')
         .pipe(connect.reload())
 });
 
@@ -27,7 +52,7 @@ gulp.task('html', function() {
 
 gulp.task('connect', function(){
   connect.server({
-    root: 'builds/development',
+    root: outputDir,
     livereload: true});
 });
 
@@ -46,22 +71,25 @@ gulp.task('watch', function() {
     gulp.watch(coffeeSources, ['coffee']);
     gulp.watch(jsSources, ['js']);
     gulp.watch('components/sass/*.scss', ['compass']);
-    gulp.watch(htmlSources, ['html']);
+    gulp.watch('builds/development/*.html', ['html']);
+    gulp.watch(jsonSources, ['json']);
 })
 
 // compass process sass and converts it to css
 // we then move it to the dev folder for css
 // it also creates a css folder in your main folder
 gulp.task('compass', function() {
-    gulp.src(sassSources)
-        .pipe(compass({
-           sass: 'components/sass',
-           image: 'builds/development/images',
-           style: 'expanded'
-        }))
-        .on('error', gutil.log)
-        .pipe(connect.reload()) 
-        .pipe(gulp.dest('builds/development/css'))
+  gulp.src(sassSources)
+    .pipe(compass({
+      sass: 'components/sass',
+      css: outputDir + 'css',
+      image: outputDir + 'images', //why is the images here?
+      style: sassStyle,
+      comments: true
+    }))
+    .on('error', gutil.log)
+    .pipe(connect.reload())
+    .pipe(gulp.dest(outputDir + 'css'))
 });
 
 // This task takes all of your js code in your 
@@ -75,7 +103,7 @@ gulp.task('js', function() {
         .pipe(concat('script.js'))
         .pipe(browserify()) 
         .pipe(connect.reload()) 
-        .pipe(gulp.dest('builds/development/js'))
+        .pipe(gulp.dest(outputDir + 'js'))
 });
 
 // this task converts our coffee script code and
@@ -96,4 +124,4 @@ gutil.log('Workflows are awesome');
 });
 
 // multi-task
-gulp.task('default', ['coffee', 'js', 'compass', 'html', 'connect', 'watch']);
+gulp.task('default', ['json', 'html', 'coffee', 'js', 'compass','connect', 'watch']);
