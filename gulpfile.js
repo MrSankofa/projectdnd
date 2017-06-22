@@ -6,11 +6,17 @@ compass = require('gulp-compass'),
 gutil = require('gulp-util');
 
 var sassSources = ['components/sass/style.scss']; //there was an error here with the /
-var jsSources = ['components/scripts/*.js'];
+var jsSources = [
+  'components/scripts/rclick.js',
+  'components/scripts/pixgrid.js',
+  'components/scripts/tagline.js',
+  'components/scripts/template.js'
+];
 var coffeeSources = ['components/coffee/*.coffee'];
 
 // compass process sass and converts it to css
 // we then move it to the dev folder for css
+// it also creates a css folder in your main folder
 gulp.task('compass', function() {
     gulp.src(sassSources)
         .pipe(compass({
