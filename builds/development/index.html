@@ -14,38 +14,38 @@
  
   <section class="conferenceinfo">
     <div class="container">
-      <h1>Doyse and Deliena Drivers Ed</h1>
+      <h1>Contemporary Art Conference</h1>
       <h2 class="tagline"></h2>
  
-      <p>Four hundred billion one trillion Join over 500 hundred of the most creative and brilliant minds of art colleges all around the world for five days of lectures by world-renowned art scholars and artists, and seven days and nights of gallery exhibits featuring the best in contemporary art, including painting, sculpture, and more, in the beautiful halls of Hotel Contempo in the heart of Seattle.</p>
+      <p>Join over 500 hundred of the most creative and brilliant minds of art colleges all around the world for five days of lectures by world-renowned art scholars and artists, and seven days and nights of gallery exhibits featuring the best in contemporary art, including painting, sculpture, and more, in the beautiful halls of Hotel Contempo in the heart of Seattle.</p>
     </div>
   </section>
  
-  <section class="featureddrivers"> <!-- featuredartists -->
+  <section class="featuredartists">
     <div class="container">
-      <h1>Featured Drivers</h1> <!-- featuredartists -->
-      <article class="driverlist rclick"> <!-- featuredartists -->
+      <h1>Featured Artists</h1>
+      <article class="artistlist rclick">
         <article class="item">
-          <img src="images/drivers/Barot_Bellingham_tn.jpg" alt="Photo of Barot Bellingham"> <!-- artists -->
+          <img src="images/artists/Barot_Bellingham_tn.jpg" alt="Photo of Barot Bellingham">
           <h2>Barot Bellingham</h2>
         </article>
         <article class="item">
-          <img src="images/drivers/Constance_Smith_tn.jpg" alt="Photo of Constance Smith"> <!-- artists -->
+          <img src="images/artists/Constance_Smith_tn.jpg" alt="Photo of Constance Smith">
           <h2>Constance Smith</h2>
         </article>
         <article class="item">
-          <img src="images/drivers/Hassum_Harrod_tn.jpg" alt="Photo of Hassum Harrod"> <!-- artists -->
+          <img src="images/artists/Hassum_Harrod_tn.jpg" alt="Photo of Hassum Harrod">
           <h2>Hassum Harrod</h2>
         </article>
         <article class="item">
-          <img src="images/drivers/Hillary_Goldwynn_tn.jpg" alt="Photo of Hillary Goldwynn"> <!-- artists -->
+          <img src="images/artists/Hillary_Goldwynn_tn.jpg" alt="Photo of Hillary Goldwynn">
           <h2>Hillary Goldwynn</h2>
         </article>
         <article class="item">
-          <img src="images/drivers/Xhou_Ta_tn.jpg" alt="Photo of Xhou Ta"> <!-- artists -->
+          <img src="images/artists/Xhou_Ta_tn.jpg" alt="Photo of Xhou Ta">
           <h2>Xhou Ta</h2>
         </article>
-      </article><!-- driverlist rclick -->
+      </article><!-- artistlist rclick -->
  
       <p>The Roux Academy gets thousands of submissions every year for artists interesting in participating in the CAC exhibits, and selects approximately 200 distinct pieces of contemporary art for display in their collective exhibit.</p>
       <p>In addition, 12 individuals are honored as Featured Artists - each being granted his or her own exhibit hall to display entire collections or themed pieces. Each Featured Artist has an opportunity to speak at the conference to share his or her vision, perspective, and techniques with conference attendees. It is truly an honor to be a CAC Featured Artist and many past students artists who were featured at CAC have gone on to brilliant careers in art.</p>
@@ -99,20 +99,20 @@
  
   <section class="ontour">
     <div class="container">
-      <h1>Drivers on tour</h1> <!-- speaker on tour -->
-      <article id="drivers"></article> <!-- speakers -->
+      <h1>Driving Instructers Onsite</h1>
+      <article id="drivers"></article> <!-- template .html(html) has to be changed -->
     </div>
   </section>
  
   <script src="js/script.js"></script>
-  <script id="driverstpl" type="text/template"> <!-- speakerstpl -->
-    {{#drivers}} <!-- speakers -->
-      <div class="driver"> <!-- speaker -->
+  <script id="driverstpl" type="text/template">
+    {{#drivers}} <!-- data.json file -->
+      <div class="driver"> <!-- Not used in css -->
         <h2>{{name}}</h2>
         <h3>{{reknown}}</h3>
-        <p><img src="images/drivers/{{shortname}}_tn.jpg" alt="Photo of {{name}}" />{{bio}}</p>
+        <p><img src="images/artists/{{shortname}}_tn.jpg" alt="Photo of {{name}}" />{{bio}}</p>
       </div>
-    {{/drivers}} <!-- speakers -->
+    {{/drivers}}
   </script>
 </body>
 </html>

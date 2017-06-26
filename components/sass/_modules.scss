@@ -12,7 +12,7 @@
   } //logo
 } //city
  
-.featureddrivers {
+.featuredartists {
   background: $darkGreenGold;
   border-top: 20px solid $beige;
   border-bottom: 50px solid $green;
@@ -38,7 +38,7 @@
     color: darken($green, 15%);
   }
  
- .driverlist {
+ .artistlist {
     padding-bottom: 20px;
  
     h2 {
@@ -64,8 +64,8 @@
         width: 100%;
       } //img
     } //item
-  } //driverlist
-} //featured drivers
+  } //artistlist
+} //featured artists
  
 .potterypix {
   @include backImage('../images/backgrounds/pottery_workshop.jpg');
