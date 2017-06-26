@@ -11,6 +11,34 @@
     min-width: 250px;
   } //logo
 } //city
+
+.smallheader {
+  background: darkseagreen;
+  font-size: 1em;
+}
+
+.bigheader {
+  background: lightseagreen;
+
+  .navcontainer {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+
+    ul li {
+      display: inline;
+    }
+
+    ul li a {
+      text-decoration: none;
+      padding: .2em 1em;
+      color: #fff;
+      
+    }
+  }
+  
+}
  
 .featureddrivers {
   background: $darkGreenGold;

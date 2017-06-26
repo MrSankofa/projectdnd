@@ -100,6 +100,7 @@ gulp.task('watch', function() {
     gulp.watch('components/sass/*.scss', ['compass']);
     gulp.watch('builds/development/*.html', ['html']);
     gulp.watch(jsonSources, ['json']);
+    gulp.watch('builds/development/css/style.css', ['html']);
 })
 
 // compass process sass and converts it to css

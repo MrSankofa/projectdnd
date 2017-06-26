@@ -1,7 +1,7 @@
 // _base.scss
 // ==============
 body {
-  background: lighten($beige, 10%);
+  background: white;
   font-family: $bodyFont;
   font-size: 1.1em;
 }
@@ -13,7 +13,7 @@ body {
  
 .container {
   width: 90%;
-  max-width: 1000px;
+  
   margin: 0 auto;
   position: relative;
 }
@@ -47,7 +47,7 @@ p {
 }
  
 section {
-  padding: 20px 0;
+  padding: 0px 0;
 }
  
 .artgroup {

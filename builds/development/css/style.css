@@ -1,7 +1,7 @@
 @import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
 /* line 3, ../../../components/sass/_base.scss */
 body {
-  background: #eddbba;
+  background: white;
   font-family: "Inika", serif;
   font-size: 1.1em;
 }
@@ -15,7 +15,6 @@ body {
 /* line 14, ../../../components/sass/_base.scss */
 .container {
   width: 90%;
-  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
@@ -56,7 +55,7 @@ p {
 
 /* line 49, ../../../components/sass/_base.scss */
 section {
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 /* line 29, ../../../components/sass/_mixins.scss */
@@ -107,49 +106,77 @@ section {
 }
 
 /* line 15, ../../../components/sass/_modules.scss */
+.smallheader {
+  background: darkseagreen;
+  font-size: 1em;
+}
+
+/* line 20, ../../../components/sass/_modules.scss */
+.bigheader {
+  background: lightseagreen;
+}
+/* line 23, ../../../components/sass/_modules.scss */
+.bigheader .navcontainer {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+/* line 29, ../../../components/sass/_modules.scss */
+.bigheader .navcontainer ul li {
+  display: inline;
+}
+/* line 33, ../../../components/sass/_modules.scss */
+.bigheader .navcontainer ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+}
+
+/* line 43, ../../../components/sass/_modules.scss */
 .featureddrivers {
   background: #8D8862;
   border-top: 20px solid #E3C691;
   border-bottom: 50px solid #507356;
 }
-/* line 20, ../../../components/sass/_modules.scss */
+/* line 48, ../../../components/sass/_modules.scss */
 .featureddrivers h1 {
   font-size: 3em;
   color: #263729;
 }
 @media (max-width: 700px) {
-  /* line 20, ../../../components/sass/_modules.scss */
+  /* line 48, ../../../components/sass/_modules.scss */
   .featureddrivers h1 {
     font-size: 2em;
   }
 }
-/* line 28, ../../../components/sass/_modules.scss */
+/* line 56, ../../../components/sass/_modules.scss */
 .featureddrivers h2 {
   margin-top: 20px;
   font-size: 1.8em;
   color: #dbb570;
 }
 @media (max-width: 700px) {
-  /* line 28, ../../../components/sass/_modules.scss */
+  /* line 56, ../../../components/sass/_modules.scss */
   .featureddrivers h2 {
     display: none;
   }
 }
-/* line 37, ../../../components/sass/_modules.scss */
+/* line 65, ../../../components/sass/_modules.scss */
 .featureddrivers p {
   color: #314634;
 }
-/* line 41, ../../../components/sass/_modules.scss */
+/* line 69, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist {
   padding-bottom: 20px;
 }
-/* line 44, ../../../components/sass/_modules.scss */
+/* line 72, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist h2 {
   margin-top: 5px;
   font-size: 1.2em;
   color: #ebd7b2;
 }
-/* line 50, ../../../components/sass/_modules.scss */
+/* line 78, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist .item {
   min-width: 95px;
   color: #6f6b4d;
@@ -159,7 +186,7 @@ section {
   text-align: center;
   position: relative;
 }
-/* line 59, ../../../components/sass/_modules.scss */
+/* line 87, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist .item > img {
   max-width: 130px;
   margin: 0 auto;
@@ -170,7 +197,7 @@ section {
   width: 100%;
 }
 
-/* line 70, ../../../components/sass/_modules.scss */
+/* line 98, ../../../components/sass/_modules.scss */
 .potterypix {
   background: url("../images/backgrounds/pottery_workshop.jpg") no-repeat 50% 20%;
   -webkit-background-size: cover;
@@ -184,30 +211,30 @@ section {
   border-bottom: 50px solid #8D8862;
 }
 @media (min-width: 801px) {
-  /* line 70, ../../../components/sass/_modules.scss */
+  /* line 98, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 350px;
   }
 }
 @media (max-width: 800px) {
-  /* line 70, ../../../components/sass/_modules.scss */
+  /* line 98, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 150px;
   }
 }
 @media (max-width: 300px) {
-  /* line 70, ../../../components/sass/_modules.scss */
+  /* line 98, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 100px;
   }
 }
 
-/* line 76, ../../../components/sass/_modules.scss */
+/* line 104, ../../../components/sass/_modules.scss */
 .aboutvenue img {
   float: right;
 }
 
-/* line 81, ../../../components/sass/_modules.scss */
+/* line 109, ../../../components/sass/_modules.scss */
 .workshoppix {
   background: url("../images/backgrounds/woodworking_workshop.jpg") no-repeat 50% 20%;
   -webkit-background-size: cover;
@@ -221,45 +248,45 @@ section {
   border-bottom: 50px solid #8D8862;
 }
 @media (min-width: 801px) {
-  /* line 81, ../../../components/sass/_modules.scss */
+  /* line 109, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 350px;
   }
 }
 @media (max-width: 800px) {
-  /* line 81, ../../../components/sass/_modules.scss */
+  /* line 109, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 150px;
   }
 }
 @media (max-width: 300px) {
-  /* line 81, ../../../components/sass/_modules.scss */
+  /* line 109, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 100px;
   }
 }
 
-/* line 87, ../../../components/sass/_modules.scss */
+/* line 115, ../../../components/sass/_modules.scss */
 .ontour h1 {
   color: #4d354c;
   font-size: 3em;
   bottom: 10px;
   right: 10%;
 }
-/* line 94, ../../../components/sass/_modules.scss */
+/* line 122, ../../../components/sass/_modules.scss */
 .ontour h2 {
   font-size: 1.8em;
   color: #8D8862;
   border-top: 1px solid #8D8862;
   padding-top: 5px;
 }
-/* line 101, ../../../components/sass/_modules.scss */
+/* line 129, ../../../components/sass/_modules.scss */
 .ontour h3 {
   font-size: 1.3em;
   color: #6b4a69;
   padding-bottom: 5px;
 }
-/* line 107, ../../../components/sass/_modules.scss */
+/* line 135, ../../../components/sass/_modules.scss */
 .ontour img {
   float: right;
   -moz-border-radius: 50%;
