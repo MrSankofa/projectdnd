@@ -12,42 +12,62 @@
   } //logo
 } //city
 
-.smallheader {
-  background: darkseagreen;
-  font-size: 1em;
-}
-
-.bigheader {
-  background: white;
-
-  .navcontainer {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-
-    ul li {
-      display: inline;
+.wrapper{
+  .smallheader {
+    background: $darkGreenGold;
+    font-size: 1em;
+    
     }
 
-    ul li a {
+  .bigheader {
+    background: $beige;
+    padding: 10px 0px;
+
+    .navcontainer {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: right;
+
+      ul li {
+        display: inline;
+      }
+
+      ul li a {
+        text-decoration: none;
+        padding: .2em 1em;
+        color: $plumberBlack;
+        
+      }
+
+      a {
+      position: relative;
       text-decoration: none;
-      padding: .2em 1em;
-      color: black;
-      
+      }
+
+      a:hover::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: 0;
+        border: 1px solid black;
+      }
     }
+    
   }
-  
 }
+
  
 .featureddrivers {
   background: $darkGreenGold;
   border-top: 20px solid $beige;
   border-bottom: 50px solid $green;
- 
+  box-sizing: initial;
+  
   h1 {
     font-size: 3em;
-    color: darken($green, 20%);
+    color: darken($plumberBlack, 20%);
     @media (max-width: 700px) {
       font-size: 2em;
     }

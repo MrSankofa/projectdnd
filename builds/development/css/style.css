@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.5em;
   margin-bottom: 10px;
-  color: #507356;
+  color: #001d30;
 }
 @media (max-width: 700px) {
   /* line 26, ../../../components/sass/_base.scss */
@@ -47,14 +47,14 @@ h1 {
 /* line 36, ../../../components/sass/_base.scss */
 h2 {
   font-size: 1.5em;
-  color: #3E2B3D;
+  color: #564d52;
 }
 
 /* line 41, ../../../components/sass/_base.scss */
 p {
   font-size: 1.3em;
   line-height: 1.5em;
-  color: #3E2B3D;
+  color: #564d52;
   margin-bottom: 20px;
   margin-top: 15px;
 }
@@ -69,6 +69,11 @@ section {
   content: "";
   display: table;
   clear: both;
+}
+
+/* line 57, ../../../components/sass/_base.scss */
+.wrapper {
+  background: darkgreen;
 }
 
 /* line 3, ../../../components/sass/_modules.scss */
@@ -111,78 +116,93 @@ section {
   min-width: 250px;
 }
 
-/* line 15, ../../../components/sass/_modules.scss */
-.smallheader {
-  background: darkseagreen;
+/* line 16, ../../../components/sass/_modules.scss */
+.wrapper .smallheader {
+  background: #8D8862;
   font-size: 1em;
 }
-
-/* line 20, ../../../components/sass/_modules.scss */
-.bigheader {
-  background: white;
+/* line 22, ../../../components/sass/_modules.scss */
+.wrapper .bigheader {
+  background: #E3C691;
+  padding: 10px 0px;
 }
-/* line 23, ../../../components/sass/_modules.scss */
-.bigheader .navcontainer {
+/* line 26, ../../../components/sass/_modules.scss */
+.wrapper .bigheader .navcontainer {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  text-align: center;
+  text-align: right;
 }
-/* line 29, ../../../components/sass/_modules.scss */
-.bigheader .navcontainer ul li {
+/* line 32, ../../../components/sass/_modules.scss */
+.wrapper .bigheader .navcontainer ul li {
   display: inline;
 }
-/* line 33, ../../../components/sass/_modules.scss */
-.bigheader .navcontainer ul li a {
+/* line 36, ../../../components/sass/_modules.scss */
+.wrapper .bigheader .navcontainer ul li a {
   text-decoration: none;
   padding: .2em 1em;
-  color: black;
+  color: #001d30;
+}
+/* line 43, ../../../components/sass/_modules.scss */
+.wrapper .bigheader .navcontainer a {
+  position: relative;
+  text-decoration: none;
+}
+/* line 48, ../../../components/sass/_modules.scss */
+.wrapper .bigheader .navcontainer a:hover::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  border: 1px solid black;
 }
 
-/* line 43, ../../../components/sass/_modules.scss */
+/* line 62, ../../../components/sass/_modules.scss */
 .featureddrivers {
   background: #8D8862;
   border-top: 20px solid #E3C691;
   border-bottom: 50px solid #507356;
+  box-sizing: initial;
 }
-/* line 48, ../../../components/sass/_modules.scss */
+/* line 68, ../../../components/sass/_modules.scss */
 .featureddrivers h1 {
   font-size: 3em;
-  color: #263729;
+  color: black;
 }
 @media (max-width: 700px) {
-  /* line 48, ../../../components/sass/_modules.scss */
+  /* line 68, ../../../components/sass/_modules.scss */
   .featureddrivers h1 {
     font-size: 2em;
   }
 }
-/* line 56, ../../../components/sass/_modules.scss */
+/* line 76, ../../../components/sass/_modules.scss */
 .featureddrivers h2 {
   margin-top: 20px;
   font-size: 1.8em;
   color: #dbb570;
 }
 @media (max-width: 700px) {
-  /* line 56, ../../../components/sass/_modules.scss */
+  /* line 76, ../../../components/sass/_modules.scss */
   .featureddrivers h2 {
     display: none;
   }
 }
-/* line 65, ../../../components/sass/_modules.scss */
+/* line 85, ../../../components/sass/_modules.scss */
 .featureddrivers p {
   color: #314634;
 }
-/* line 69, ../../../components/sass/_modules.scss */
+/* line 89, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist {
   padding-bottom: 20px;
 }
-/* line 72, ../../../components/sass/_modules.scss */
+/* line 92, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist h2 {
   margin-top: 5px;
   font-size: 1.2em;
   color: #ebd7b2;
 }
-/* line 78, ../../../components/sass/_modules.scss */
+/* line 98, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist .item {
   min-width: 95px;
   color: #6f6b4d;
@@ -192,7 +212,7 @@ section {
   text-align: center;
   position: relative;
 }
-/* line 87, ../../../components/sass/_modules.scss */
+/* line 107, ../../../components/sass/_modules.scss */
 .featureddrivers .driverlist .item > img {
   max-width: 130px;
   margin: 0 auto;
@@ -203,7 +223,7 @@ section {
   width: 100%;
 }
 
-/* line 98, ../../../components/sass/_modules.scss */
+/* line 118, ../../../components/sass/_modules.scss */
 .potterypix {
   background: url("../images/backgrounds/pottery_workshop.jpg") no-repeat 50% 20%;
   -webkit-background-size: cover;
@@ -217,30 +237,30 @@ section {
   border-bottom: 50px solid #8D8862;
 }
 @media (min-width: 801px) {
-  /* line 98, ../../../components/sass/_modules.scss */
+  /* line 118, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 350px;
   }
 }
 @media (max-width: 800px) {
-  /* line 98, ../../../components/sass/_modules.scss */
+  /* line 118, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 150px;
   }
 }
 @media (max-width: 300px) {
-  /* line 98, ../../../components/sass/_modules.scss */
+  /* line 118, ../../../components/sass/_modules.scss */
   .potterypix {
     height: 100px;
   }
 }
 
-/* line 104, ../../../components/sass/_modules.scss */
+/* line 124, ../../../components/sass/_modules.scss */
 .aboutvenue img {
   float: right;
 }
 
-/* line 109, ../../../components/sass/_modules.scss */
+/* line 129, ../../../components/sass/_modules.scss */
 .workshoppix {
   background: url("../images/backgrounds/woodworking_workshop.jpg") no-repeat 50% 20%;
   -webkit-background-size: cover;
@@ -254,45 +274,45 @@ section {
   border-bottom: 50px solid #8D8862;
 }
 @media (min-width: 801px) {
-  /* line 109, ../../../components/sass/_modules.scss */
+  /* line 129, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 350px;
   }
 }
 @media (max-width: 800px) {
-  /* line 109, ../../../components/sass/_modules.scss */
+  /* line 129, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 150px;
   }
 }
 @media (max-width: 300px) {
-  /* line 109, ../../../components/sass/_modules.scss */
+  /* line 129, ../../../components/sass/_modules.scss */
   .workshoppix {
     height: 100px;
   }
 }
 
-/* line 115, ../../../components/sass/_modules.scss */
+/* line 135, ../../../components/sass/_modules.scss */
 .ontour h1 {
   color: #4d354c;
   font-size: 3em;
   bottom: 10px;
   right: 10%;
 }
-/* line 122, ../../../components/sass/_modules.scss */
+/* line 142, ../../../components/sass/_modules.scss */
 .ontour h2 {
   font-size: 1.8em;
   color: #8D8862;
   border-top: 1px solid #8D8862;
   padding-top: 5px;
 }
-/* line 129, ../../../components/sass/_modules.scss */
+/* line 149, ../../../components/sass/_modules.scss */
 .ontour h3 {
   font-size: 1.3em;
   color: #6b4a69;
   padding-bottom: 5px;
 }
-/* line 135, ../../../components/sass/_modules.scss */
+/* line 155, ../../../components/sass/_modules.scss */
 .ontour img {
   float: right;
   -moz-border-radius: 50%;
@@ -306,7 +326,7 @@ section {
 
 /* line 1, ../../../components/sass/_sliderstyle.scss */
 .slider {
-  height: 350px;
+  height: 400px;
   margin: 0px auto;
   position: relative;
 }
@@ -318,21 +338,21 @@ section {
 }
 /* line 13, ../../../components/sass/_sliderstyle.scss */
 .slider .slide1 {
-  background: url("../images/backgrounds/pottery_finished.jpg") no-repeat center;
+  background: url("../images/backgrounds/driving_green.png") no-repeat center;
   background-size: cover;
   animation: fade 8s infinite;
   -webkit-animation: fade 8s infinite;
 }
 /* line 20, ../../../components/sass/_sliderstyle.scss */
 .slider .slide2 {
-  background: url("../images/backgrounds/pottery_workshop.jpg") no-repeat center;
+  background: url("../images/backgrounds/woman_keys.png") no-repeat center;
   background-size: cover;
   animation: fade2 8s infinite;
   -webkit-animation: fade2 8s infinite;
 }
 /* line 26, ../../../components/sass/_sliderstyle.scss */
 .slider .slide3 {
-  background: url("../images/backgrounds/seattle_skyline.jpg") no-repeat center;
+  background: url("../images/backgrounds/green_road.png") no-repeat center;
   background-size: cover;
   animation: fade3 8s infinite;
   -webkit-animation: fade3 8s infinite;

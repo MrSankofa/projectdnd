@@ -1,7 +1,7 @@
 .slider {
   
   
-  height: 350px;
+  height: 400px;
   margin: 0px auto;
   position: relative;
 
@@ -11,20 +11,20 @@
         height: 100%;
       }
       .slide1 {
-        background: url("../images/backgrounds/pottery_finished.jpg")no-repeat center;
+        background: url("../images/backgrounds/driving_green.png")no-repeat center;
             background-size: cover;
           animation:fade 8s infinite;
       -webkit-animation:fade 8s infinite;
 
       } 
       .slide2 {
-        background: url("../images/backgrounds/pottery_workshop.jpg")no-repeat center;
+        background: url("../images/backgrounds/woman_keys.png")no-repeat center;
             background-size: cover;
           animation:fade2 8s infinite;
       -webkit-animation:fade2 8s infinite;
       }
       .slide3 {
-          background: url("../images/backgrounds/seattle_skyline.jpg")no-repeat center;
+          background: url("../images/backgrounds/green_road.png")no-repeat center;
             background-size: cover;
           animation:fade3 8s infinite;
       -webkit-animation:fade3 8s infinite;
