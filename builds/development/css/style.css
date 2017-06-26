@@ -107,50 +107,50 @@ section {
 }
 
 /* line 15, ../../../components/sass/_modules.scss */
-.featuredartists {
+.featureddrivers {
   background: #8D8862;
   border-top: 20px solid #E3C691;
   border-bottom: 50px solid #507356;
 }
 /* line 20, ../../../components/sass/_modules.scss */
-.featuredartists h1 {
+.featureddrivers h1 {
   font-size: 3em;
   color: #263729;
 }
 @media (max-width: 700px) {
   /* line 20, ../../../components/sass/_modules.scss */
-  .featuredartists h1 {
+  .featureddrivers h1 {
     font-size: 2em;
   }
 }
 /* line 28, ../../../components/sass/_modules.scss */
-.featuredartists h2 {
+.featureddrivers h2 {
   margin-top: 20px;
   font-size: 1.8em;
   color: #dbb570;
 }
 @media (max-width: 700px) {
   /* line 28, ../../../components/sass/_modules.scss */
-  .featuredartists h2 {
+  .featureddrivers h2 {
     display: none;
   }
 }
 /* line 37, ../../../components/sass/_modules.scss */
-.featuredartists p {
+.featureddrivers p {
   color: #314634;
 }
 /* line 41, ../../../components/sass/_modules.scss */
-.featuredartists .artistlist {
+.featureddrivers .driverlist {
   padding-bottom: 20px;
 }
 /* line 44, ../../../components/sass/_modules.scss */
-.featuredartists .artistlist h2 {
+.featureddrivers .driverlist h2 {
   margin-top: 5px;
   font-size: 1.2em;
   color: #ebd7b2;
 }
 /* line 50, ../../../components/sass/_modules.scss */
-.featuredartists .artistlist .item {
+.featureddrivers .driverlist .item {
   min-width: 95px;
   color: #6f6b4d;
   width: 18%;
@@ -160,7 +160,7 @@ section {
   position: relative;
 }
 /* line 59, ../../../components/sass/_modules.scss */
-.featuredartists .artistlist .item > img {
+.featureddrivers .driverlist .item > img {
   max-width: 130px;
   margin: 0 auto;
   display: block;
