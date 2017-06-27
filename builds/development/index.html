@@ -9,16 +9,83 @@
 <body>
 
 
-<div class="header">
-  <h1>ScrollMagic - Sticky header</h1>
-</div>
-<nav class="menu" id="nav">
-  <li><a href="">Home</a></li>
-  <li><a href="">Somewhere Else</a></li>
-  <li><a href="">About</a></li>
-  <li><a href="">Team</a></li>
-</nav>
+<link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
 
+  
+<header class="main_h">
+
+    <div class="row">
+        <a class="logo" href="#">P/F</a>
+
+        <div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href=".sec01">Section 01</a></li>
+                <li><a href=".sec02">Section 02</a></li>
+                <li><a href=".sec03">Section 03</a></li>
+                <li><a href=".sec04">Section 04</a></li>
+            </ul>
+        </nav>
+
+    </div> <!-- / row -->
+
+</header>
+
+<div class="hero">
+
+    <h1><span>I'm a cool</span><br>Navigation</h1>
+
+    <div class="mouse">
+        <span></span>
+    </div>
+
+</div>
+
+<script>
+  // Sticky Header
+$(window).scroll(function() {
+
+    if ($(window).scrollTop() > 100) {
+        $('.main_h').addClass('sticky');
+    } else {
+        $('.main_h').removeClass('sticky');
+    }
+});
+
+// Mobile Navigation
+$('.mobile-toggle').click(function() {
+    if ($('.main_h').hasClass('open-nav')) {
+        $('.main_h').removeClass('open-nav');
+    } else {
+        $('.main_h').addClass('open-nav');
+    }
+});
+
+$('.main_h li a').click(function() {
+    if ($('.main_h').hasClass('open-nav')) {
+        $('.navigation').removeClass('open-nav');
+        $('.main_h').removeClass('open-nav');
+    }
+});
+
+// navigation scroll lijepo radi materem
+$('nav a').click(function(event) {
+    var id = $(this).attr("href");
+    var offset = 70;
+    var target = $(id).offset().top - offset;
+    $('html, body').animate({
+        scrollTop: target
+    }, 500);
+    event.preventDefault();
+});
+</script>
 
   
 
