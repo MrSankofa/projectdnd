@@ -8,39 +8,9 @@
 </head>
 <body>
 
-
-<div class="header">
-  <h1>ScrollMagic - Sticky header</h1>
-</div>
-<nav class="menu" id="nav">
-  <li><a href="">Home</a></li>
-  <li><a href="">Somewhere Else</a></li>
-  <li><a href="">About</a></li>
-  <li><a href="">Team</a></li>
-</nav>
-
-
-  
-
-
-  <section class="slider">
-
-    <div class='slider'>
-      <div class='slide1'></div>
-      <div class='slide2'></div>
-      <div class='slide3'></div>
-    </div>
-
   </section>
      
-  <section class="conferenceinfo">
-    <div class="container">
-      <h1>Doyse and Deliena Citizen's Driving School</h1>
-      <h2 class="tagline"></h2>
- 
-      <p>D-N-D Citizens Driving School provides driving lessons, classroom instruction, and on-the-road training to teens and other new drivers. Under our guidance and instruction, you will qualify for a State of Michigan driver's license. You have come to the right place! Our courses and training will ensure that you will become a safe and informed driver. Our training for teens includes Segment 1 & 2 classes. We serve the Inkster, Garden City, Westland, Livonia, Romulus communities as well as the greater Wayne and Washtenaw county areas.  We have qualified, professional instructors, affordable rates, and convenient hours. Our quality service and low prices cannot be matched. Our services are available by appointment in order to help you become a licensed driver in the State of Michigan.</p>
-    </div>
-  </section>
+  
  
   <section class="featureddrivers">
     <div class="container">
@@ -118,48 +88,26 @@
  
   <section class="workshoppix"></section>
  
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.15809898978!2d-83.33181198464875!3d42.296491847106346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b4bf36d631cdf%3A0xdcba9078a0b489eb!2s2025+Middlebelt+Rd%2C+Inkster%2C+MI+48141!5e0!3m2!1sen!2sus!4v1498519093459" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-<footer class="footer">
-  <div class="footer-left col-md-4 col-sm-6">
-    <p class="about">
-      <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
-      ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
-    </p>
-    <div class="icons">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-google-plus"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
+  <section class="ontour">
+    <div class="container">
+      <h1>Driving Instructers Onsite</h1>
+      <article id="drivers"></article> <!-- template .html(html) has to be changed -->
     </div>
-  </div>
-  <div class="footer-center col-md-4 col-sm-6">
-    <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span> Street name and number</span> City, Country</p>
-    </div>
-    <div>
-      <i class="fa fa-phone"></i>
-      <p> (+00) 0000 000 000</p>
-    </div>
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p><a href="#"> office@company.com</a></p>
-    </div>
-  </div>
-  <div class="footer-right col-md-4 col-sm-6">
-    <h2> Company<span> logo</span></h2>
-    <p class="menu">
-      <a href="#"> Home</a> |
-      <a href="#"> About</a> |
-      <a href="#"> Services</a> |
-      <a href="#"> Portfolio</a> |
-      <a href="#"> News</a> |
-      <a href="#"> Contact</a>
-    </p>
-    <p class="name"> Company Name &copy; 2016</p>
-  </div>
-</footer>
+  </section>
+ 
+  <script src="js/script.js"></script>
+  <script id="driverstpl" type="text/template">
+    {{#drivers}} <!-- data.json file -->
+      <div class="driver"> <!-- Not used in css -->
+        <h2>{{name}}</h2>
+        <h3>{{reknown}}</h3>
+        <p><img src="images/drivers/{{shortname}}_tn.jpg" alt="Photo of {{name}}" />{{bio}}</p>
+      </div>
+    {{/drivers}}
+  </script>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.15809898978!2d-83.33181198464875!3d42.296491847106346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b4bf36d631cdf%3A0xdcba9078a0b489eb!2s2025+Middlebelt+Rd%2C+Inkster%2C+MI+48141!5e0!3m2!1sen!2sus!4v1498519093459" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
 </body>
 </html>
