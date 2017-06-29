@@ -15,61 +15,96 @@
 
   
   
-<header class="main_h">
-
-  <div class="2ndrow">
-        
-
-        <div class="mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+<header class="fixed-header">
+  <div class="head-control header-top">
+    <div class="head-wrap">
+      <div class="head-contact">
+        <div class="head-contact-list">
+          <div class="head-contact-item"><i class="fa fa-phone"></i> Call Us: 888-234-5456</div>
+          <div class="head-contact-item"><i class="fa fa-envelope"></i> Email: info@example.com</div>
         </div>
+      </div>
 
-        <nav>
-            <ul>
-				<li><a href=".sec03"></a></li>
-                <li><a href=".sec04"></a></li>	
-				<li><a href=".sec03"></a></li>
-                <li><a href=".sec04"></a></li>		
-				<li><a href=".sec01"></a></li>
-				<li><a href=".sec01"></a></li>
-                <li><a href=".sec01"></a></li>
-                <li><a href=".sec01">Call Us Today:</a></li>
-                <li><a href=".sec02"> 555-555-5555</a></li>
-            </ul>
-        </nav>
-
-    </div> <!-- / row -->    
-
-<div class="row">
-        
-
-        <a class="logo" href="#">Contact Us:</a><div class="mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+      <div class="head-social">
+        <div class="head-social-list">
+          <div class="head-social-item facebook">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+          <div class="head-social-item twitter">
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </div>
+          <div class="head-social-item google-plus">
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </div>
+          <div class="head-social-item youtube">
+            <a href="#"><i class="fa fa-youtube-play"></i></a>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <nav>
+  <div class="head-control header-mid">
+    <div class="head-wrap">
+      <div class="logo">
+        <h1>Fixed</h1>
+      </div>
+
+      <nav class="primary-nav pull-right">
+        <ul>
+          <li><a href="#">Menu 1</a></li>
+          <li class="has-columns"><a href="#">Menu 2</a>
             <ul>
-		<li><a href=".sec01">Find us on: F</a></li>
-		<li><a href=".sec01">Address 123</a></li>
-                <li><a href=".sec01">email@mail.com |</a></li>
-		
-                <li><a href=".sec02">Home</a></li>
-                <li><a href=".sec02">Adult Driving</a></li>
-                <li><a href=".sec03">Segment 1</a></li>
-                <li><a href=".sec04">Segment 2</a></li>
-                
-                
+              <li class="column-4"><a href="#">Child Title 1</a>
+                <ul>
+                  <li><a href="#">Child 1</a></li>
+                  <li><a href="#">Child 2</a></li>
+                  <li><a href="#">Child 3</a></li>
+                </ul>
+              </li>
+              <li class="column-4"><a href="#">Child Title 2</a>
+                <ul>
+                  <li><a href="#">Child 1</a></li>
+                  <li><a href="#">Child 2</a></li>
+                  <li><a href="#">Child 3</a></li>
+                </ul>
+              </li>
+              <li class="column-4"><a href="#">Child Title 3</a>
+                <ul>
+                  <li><a href="#">Child 1</a></li>
+                  <li><a href="#">Child 2</a></li>
+                  <li><a href="#">Child 3</a></li>
+                </ul>
+              </li>
+              <li class="column-4"><a href="#">Child Title 4</a>
+                <ul>
+                  <li><a href="#">Child 1</a></li>
+                  <li><a href="#">Child 2</a></li>
+                  <li><a href="#">Child 3</a></li>
+                </ul>
+              </li>
             </ul>
-        </nav>
-
-    </div> <!-- / row -->
-
-	
-
+          </li>
+          <li><a href="#">Menu 3</a>
+            <ul>
+              <li><a href="#">Child 1</a></li>
+              <li><a href="#">Child 2</a></li>
+              <li><a href="#">Child 3</a>
+                <ul>
+                  <li><a href="#">Child 1</a></li>
+                  <li><a href="#">Child 2</a></li>
+                  <li><a href="#">Child 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Menu 4</a></li>
+          <li><a href="#">Menu 5</a></li>
+          <li><a href="#">Menu 6</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 
 <div class="hero">
@@ -83,41 +118,46 @@
 </div>
 
 <script>
-  // Sticky Header
 $(window).scroll(function() {
-
-    if ($(window).scrollTop() > 100) {
-        $('.main_h').addClass('sticky');
-    } else {
-        $('.main_h').removeClass('sticky');
-    }
+  if ($(this).scrollTop() > 1) {
+    $('header.fixed-header').addClass("sticky");
+  } else {
+    $('header.fixed-header').removeClass("sticky");
+  }
 });
 
-// Mobile Navigation
-$('.mobile-toggle').click(function() {
-    if ($('.main_h').hasClass('open-nav')) {
-        $('.main_h').removeClass('open-nav');
-    } else {
-        $('.main_h').addClass('open-nav');
-    }
-});
+$(document).ready(function() {
 
-$('.main_h li a').click(function() {
-    if ($('.main_h').hasClass('open-nav')) {
-        $('.navigation').removeClass('open-nav');
-        $('.main_h').removeClass('open-nav');
-    }
-});
+  if (Modernizr.csstransitions) {
+    console.log('using transitions for menus');
+    // Use CSS transitions for the fade
+    $('.primary-nav li:not(.has-columns) ul > li').append('<span class="nav-arrow"></span>');
+    $('.primary-nav li:not(.has-columns) ul > li:has(ul) > span').css('display', 'block');
 
-// navigation scroll lijepo radi materem
-$('nav a').click(function(event) {
-    var id = $(this).attr("href");
-    var offset = 70;
-    var target = $(id).offset().top - offset;
-    $('html, body').animate({
-        scrollTop: target
-    }, 500);
-    event.preventDefault();
+  } else {
+    console.log('using jquery fade for menus');
+    // css('visibility', 'visible') to undo the visibility hide/show stuff in CSS (to support IE8 display fading)
+
+    $('.primary-nav li:not(.has-columns) ul > li').append('<span class="nav-arrow"></span>');
+    $('.primary-nav li:not(.has-columns) ul > li:has(ul) > span').css('display', 'block');
+
+    $('.primary-nav > ul > li > ul').css('visibility', 'visible').hide();
+    $('.primary-nav > ul > li:has(ul)').hover(
+      function() {
+        //show its submenu
+        $(this).find('> ul').fadeIn(100);
+      },
+      function() {
+        //hide its submenu
+        $(this).find('> ul').fadeOut(300);
+      }
+    );
+  }
+
+  $('li.column-2 > a').removeAttr('href').addClass("column-title");
+  $('li.column-3 > a').removeAttr('href').addClass("column-title");
+  $('li.column-4 > a').removeAttr('href').addClass("column-title");
+  $('li.column-5 > a').removeAttr('href').addClass("column-title");
 });
 </script>
      
