@@ -69,7 +69,7 @@ section {
 $top-bar-starting-height:  40px;
 $top-bar-scrolling-height: 0px;
 
-$header-starting-height:  150px;
+$header-starting-height:  40px;
 $header-scrolling-height: 60px;
 
 $primary-accent-color:    #253B80;
@@ -248,10 +248,12 @@ header.fixed-header .head-control {
 nav.primary-nav {
   display: inline-block;
   vertical-align: middle;
+  float: right;
 }
 
 nav.primary-nav ul {
   margin: 0px;
+  margin-top: 40px;
   padding: 0px;
   list-style-type: none;
   > li {
