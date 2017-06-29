@@ -2,7 +2,7 @@
 
 This project is for Doyse and Deliena's Driver's Ed Website.
 
-To use this repository use npm install to install of the dependecies needed for this website.
+To use this repository you will need to have nodejs, ruby, and git installed on your computer. The default settings for the latest version of each application will work for this project. Make sure that you add each respective command to the PATH. During the installation process it should alert you and allow you to choose this option. Once you've have completed the above, you can follow the steps below to work from the respositories on this website.
 
 1. Click the download button
 2. Move the zip folder to your desktop
