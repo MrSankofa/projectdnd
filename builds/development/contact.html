@@ -27,23 +27,79 @@
     </a>
   </div>
   <div class="col-8 bg-primary">
-
+        <h1 style="margin-top:30px;">Doyse and Deliena Driver's School </h1>
   </div>
 
   <div class="col-2 bg-warning">
-
+        <nav class="nav flex-column">
+            <h3 class="nav-item" style="margin-top:30px;">Call Us Today!</h3>
+            <a class="nav-item nav-link" href="tel:7347768906">(734) 776-8906</a>    
+        </nav>
   </div>
 </div> 
 
   <div class="row bg-danger sticky-top" style="padding:0 10px">
     <section class="col-12">
         <nav class="nav nav-pills justify-content-end">
-          <a class="nav-item nav-link" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Courses </a>
-          <a class="nav-item nav-link active" href="#">Contact Us </a>
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="courses.html">Courses </a>
+          <a class="nav-item nav-link active" href="contact.html">Contact Us </a>
         </nav>
     </section>
   </div>
+
+  <section class="slider">
+    <div class='slider'>
+      <div class='slide1'></div>
+      <div class='slide2'></div>
+      <div class='slide3'></div>
+    </div>
+</section>
+
+
+<script>
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 1) {
+    $('header.fixed-header').addClass("sticky");
+  } else {
+    $('header.fixed-header').removeClass("sticky");
+  }
+});
+
+$(document).ready(function() {
+
+  if (Modernizr.csstransitions) {
+    console.log('using transitions for menus');
+    // Use CSS transitions for the fade
+    $('.primary-nav li:not(.has-columns) ul > li').append('<span class="nav-arrow"></span>');
+    $('.primary-nav li:not(.has-columns) ul > li:has(ul) > span').css('display', 'block');
+
+  } else {
+    console.log('using jquery fade for menus');
+    // css('visibility', 'visible') to undo the visibility hide/show stuff in CSS (to support IE8 display fading)
+
+    $('.primary-nav li:not(.has-columns) ul > li').append('<span class="nav-arrow"></span>');
+    $('.primary-nav li:not(.has-columns) ul > li:has(ul) > span').css('display', 'block');
+
+    $('.primary-nav > ul > li > ul').css('visibility', 'visible').hide();
+    $('.primary-nav > ul > li:has(ul)').hover(
+      function() {
+        //show its submenu
+        $(this).find('> ul').fadeIn(100);
+      },
+      function() {
+        //hide its submenu
+        $(this).find('> ul').fadeOut(300);
+      }
+    );
+  }
+
+  $('li.column-2 > a').removeAttr('href').addClass("column-title");
+  $('li.column-3 > a').removeAttr('href').addClass("column-title");
+  $('li.column-4 > a').removeAttr('href').addClass("column-title");
+  $('li.column-5 > a').removeAttr('href').addClass("column-title");
+});
+</script>
 
 <section>
   What is Lorem Ipsum?
@@ -80,6 +136,71 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 </section>
 
+<div class="container bg-danger w-100 h-100" style="height:500px; margin:0px; padding:0;">
+    <div class="row bg-primary w-75 mx-auto">
+
+        <div class="col-4 bg-success">
+            <div class="container" style="font-size: 15px; margin-bottom: 10px; border-width: 0px 0px 1px 0px; border-style: dotted; border-color:aqua; padding-left: 0px;">
+                <h6 >Browse Our Website</h6>
+            </div>
+            
+
+            <nav class="nav flex-column">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">Courses </a>
+                <a class="nav-item nav-link active" href="#">Contact Us </a>
+            </nav>
+        </div>
+
+        <div class="col-4 bg-warning">
+            <div class="container" style="font-size: 15px; margin-bottom: 10px; border-width: 0px 0px 1px 0px; border-style: dotted; border-color:aqua; padding-left: 0px;">
+                <h6 >Contact Information</h6>
+            </div>
+
+            <div id="inc38_htmltext6" class="inc38_htmltext6_wp_outer">
+                <strong>Phone:</strong><br><a href="tel:7347768906">(734) 776-8906</a>
+                <br><strong><br>Email:</strong><br>
+                <a href="mailto:citizensdrivednd@yahoo.com">citizensdrivednd@yahoo.com</a>
+                <br><strong><br>Address:</strong><br>2025 Middlebelt Rd. Inkster, MI 48141
+                <div class="clear_div" style="clear:both;height:0px;"> </div>
+            </div>
+        
+        </div> <!-- -->
+        
+        <div class="col-4 bg-success">
+            <div class="container" style="font-size: 15px; margin-bottom: 10px; border-width: 0px 0px 1px 0px; border-style: dotted; border-color:aqua; padding-left: 0px;">
+                <h6 >Contact Us</h6>
+            </div>
+
+            <form>
+
+                <fieldset class="form-group">
+                    <h6>Please Fill Out Form Below</h6>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="ownername" placeholder="Name">
+                    </div><!-- form-group -->
+
+                    <div class="form-group">
+                        <input class="form-control" type="phone"  aria-describedby="phoneHelp" placeholder="Phone">
+                    </div><!-- form-group -->
+
+                    <div class="form-group">
+                        <input class="form-control" type="email" id="owneremail" aria-describedby="emailHelp" placeholder="Email">
+                    </div><!-- form-group -->
+
+                    <div class="form-group">
+                        <textarea class="form-control" id="reasonforvisit" rows="5" placeholder="Comments"></textarea>
+                    </div><!-- form-group -->
+
+                </fieldset><!-- fieldset -->
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+
+        </div> <!-- Contact us-->
+    </div> <!-- Row div-->
+</div> <!--Footer Container div-->
 
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
