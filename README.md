@@ -18,3 +18,17 @@ If you are trying to set the env variable to production note that the production
 folder should be empty otherwise it will not overwrite the new code you had. Thus
 just delete the files not the folder and execute NODE_ENV=production gulp in the 
 command prompt or terminal.
+
+
+Once you have the downloaded and move it to your desktop 
+
+1. press Windows + "r" 
+2. opens run application, type cmd ,press enter
+3. Navigate to the projectdnd-master directory
+3a. use the cd command and the name of the next level to find the projectdnd directory. dir
+
+4. Once your in the projectdnd directory, type gulp and press enter.
+this starts the server and you can open a texteditor (notepad++) to
+edit the code. To stop the server CTRL+C
+
+
